@@ -42,9 +42,33 @@ class List
                      - this function has the partial implementation described below, although being an abstract class, has no actual list to print.
                      - It should print out "I'm a list. My size is #", where '#' is the size of the list, followed by a newline.
     */
+public:
+    ~List();
+    virtual bool AppendItem(ListItem) {
+        return false;
+    }
+    virtual bool PrependItem(ListItem){
+        return true;
+    }
+    virtual ListItem GetItemAt(unsigned int){
+        return INVALID_LIST_ITEM;
+    }
+    virtual void DeleteItemAt(unsigned int){
+        
+    }
+    unsigned int GetSize(){
+        return 0;
+    }
+    void Print(){
+        
+    }
+    void ReversePrint(){
+        
+    }
+    
 };
 
-class ArrayList
+class ArrayList : public List
 {
     //
     //  TODO !!!
@@ -59,6 +83,9 @@ class ArrayList
         Even though ListItem is typedef'd to be easy to change, you can assume for the print function that it's going to stay int.
     ReversePrint should call the List class ReversePrint function and then print the contents of the list in the format "\t[3, 2, 1, 0]"
     */
+public:
+    ArrayList();
+     
 };
 
 
