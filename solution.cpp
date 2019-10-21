@@ -56,11 +56,11 @@ void ArrayList::DeleteItemAt(unsigned int index){
 
 void List::Print(){
     string comma = ", ";
-    int i;
+   
     cout << "I'm a list. My size is\t[";
-    for (  i = 0; i < size; i ++ ){
+    for (  int i = 0; i < size; i ++ ){
         if(i < size-1){
-        cout << GetItemAt(i) << comma;
+            cout << GetItemAt(i) << comma;
         }
         else{
             cout << GetItemAt(i);
@@ -69,5 +69,17 @@ void List::Print(){
     cout << "]" << endl;
 }
 void List::ReversePrint(){
-   // for ( int i = size; i )
+    string comma = ", ";
+    cout << "I'm a list. My size is\t[";
+    for ( int i = size -1; i > -1; i-- ){
+        if(size > i-1){
+           // cout << "\n int here \n";
+                 cout << GetItemAt(i) << comma;
+             }
+             else{
+                 cout << GetItemAt(i);
+             }
+        
+    }
+    cout << "]" << endl;
 }
