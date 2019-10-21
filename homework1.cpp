@@ -42,6 +42,8 @@ int main()
         printf("GetSize: %d\r\n", list->GetSize());
         printf("GetItemAt: %d\r\n", list->GetItemAt(4));
         printf("GetItemAt: %d\r\n", list->GetItemAt(8));
+        
+        
         list->Print();
         list->ReversePrint();
 

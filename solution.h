@@ -101,7 +101,7 @@ class DoublyLinkedList
         ('\t' is the tab character in case there's some other crazy, C++ way to do that and you're not familiar with my terminology).
         Even though ListItem is typedef'd to be easy to change, you can assume for the print function that it's going to stay int.
     ReversePrint should call the List class ReversePrint function and then print the contents of the list in the format "\t[3, 2, 1, 0]"
-    */
+    */  
 public:
     ~DoublyLinkedList();
     bool AppendItem(ListItem) ;
