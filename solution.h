@@ -2,6 +2,9 @@
 
 typedef int ListItem;
 #define INVALID_LIST_ITEM (-1)
+#include "solution.h"
+#include "iostream"
+using namespace std;
 
 //
 //  TODO !!!
@@ -43,28 +46,16 @@ class List
                      - It should print out "I'm a list. My size is #", where '#' is the size of the list, followed by a newline.
     */
 public:
-    ~List();
-    virtual bool AppendItem(ListItem) {
-        return false;
-    }
-    virtual bool PrependItem(ListItem){
-        return true;
-    }
-    virtual ListItem GetItemAt(unsigned int){
-        return INVALID_LIST_ITEM;
-    }
-    virtual void DeleteItemAt(unsigned int){
-        
-    }
-    unsigned int GetSize(){
-        return 0;
-    }
-    void Print(){
-        
-    }
-    void ReversePrint(){
-        
-    }
+   // ~List();
+    virtual bool AppendItem(ListItem) = 0;
+    virtual bool PrependItem(ListItem) = 0;
+    virtual ListItem GetItemAt(unsigned int) = 0;
+    virtual void DeleteItemAt(unsigned int) = 0;
+    unsigned int GetSize();
+    void Print();
+    void ReversePrint();
+protected:
+    unsigned int size = 0;
     
 };
 
@@ -78,14 +69,21 @@ class ArrayList : public List
     ArrayList derives from List and implements it using a static array.
     The constructor should take an unsigned int specifying the capacity of the array.
     AppendItem and PrependItem should fail (i.e. return false) if the array is full.
-    Print should first call the List class Print function and then print the contents of the list in the format "\t[0, 1, 2, 3]"
+    Print (cout) should first call the List class Print function and then print the contents of the list in the format "\t[0, 1, 2, 3]"
         ('\t' is the tab character in case there's some other crazy, C++ way to do that and you're not familiar with my terminology).
         Even though ListItem is typedef'd to be easy to change, you can assume for the print function that it's going to stay int.
     ReversePrint should call the List class ReversePrint function and then print the contents of the list in the format "\t[3, 2, 1, 0]"
     */
 public:
-    ArrayList();
-     
+    ArrayList(unsigned int capacity);
+     bool AppendItem(ListItem) override;
+     bool PrependItem(ListItem) override;
+    virtual ListItem GetItemAt(unsigned int)override;
+    virtual void DeleteItemAt(unsigned int) override;
+    ListItem *array;
+private:
+    unsigned int _capacity;
+    
 };
 
 
@@ -104,4 +102,8 @@ class DoublyLinkedList
         Even though ListItem is typedef'd to be easy to change, you can assume for the print function that it's going to stay int.
     ReversePrint should call the List class ReversePrint function and then print the contents of the list in the format "\t[3, 2, 1, 0]"
     */
+public:
+    ~DoublyLinkedList();
+    bool AppendItem(ListItem) ;
+    bool PrependItem(ListItem) ;
 };

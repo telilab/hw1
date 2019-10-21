@@ -2,7 +2,7 @@
 //
 
 #include "solution.h"
-
+using namespace std;
 //
 //  TODO !!!
 //
@@ -17,12 +17,12 @@ int main()
 {
     ArrayList a1 = ArrayList(10);
     ArrayList a2 = ArrayList(5);
-    DoublyLinkedList l1 = DoublyLinkedList();
+   // DoublyLinkedList l1 = DoublyLinkedList();
 
     List *lists[] = { 
         &a1, 
         &a2, 
-        &l1, 
+     //   &l1, 
         nullptr
     };
     int index = 0;
@@ -33,16 +33,15 @@ int main()
 
         printf("AppendItem %s\r\n", list->AppendItem(5) ? "succeeded" : "failed");
         printf("AppendItem %s\r\n", list->AppendItem(3) ? "succeeded" : "failed");
-        printf("AppendItem %s\r\n", list->PrependItem(7) ? "succeeded" : "failed");
+        printf("PrependItem %s\r\n", list->PrependItem(7) ? "succeeded" : "failed");
         printf("GetSize: %d\r\n", list->GetSize());
         printf("AppendItem %s\r\n", list->AppendItem(0) ? "succeeded" : "failed");
-        printf("AppendItem %s\r\n", list->PrependItem(6) ? "succeeded" : "failed");
+        printf("PrependItem %s\r\n", list->PrependItem(6) ? "succeeded" : "failed");
         printf("AppendItem %s\r\n", list->AppendItem(9) ? "succeeded" : "failed");
-        printf("AppendItem %s\r\n", list->PrependItem(8) ? "succeeded" : "failed");
+        printf("PrependItem %s\r\n", list->PrependItem(8) ? "succeeded" : "failed");
         printf("GetSize: %d\r\n", list->GetSize());
         printf("GetItemAt: %d\r\n", list->GetItemAt(4));
         printf("GetItemAt: %d\r\n", list->GetItemAt(8));
-        
         list->Print();
         list->ReversePrint();
 
