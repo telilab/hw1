@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		98DA508E235EA48E0041D022 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DA508D235EA48E0041D022 /* main.cpp */; };
+		98DA509E235EA5DC0041D022 /* homework1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DA509A235EA5DC0041D022 /* homework1.cpp */; };
+		98DA509F235EA5DC0041D022 /* solution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DA509D235EA5DC0041D022 /* solution.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,10 @@
 
 /* Begin PBXFileReference section */
 		98DA508A235EA48E0041D022 /* hw1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hw1; sourceTree = BUILT_PRODUCTS_DIR; };
-		98DA508D235EA48E0041D022 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		98DA509A235EA5DC0041D022 /* homework1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = homework1.cpp; path = ../../homework1.cpp; sourceTree = "<group>"; };
+		98DA509B235EA5DC0041D022 /* solution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = solution.h; path = ../../solution.h; sourceTree = "<group>"; };
+		98DA509C235EA5DC0041D022 /* Makefile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Makefile.txt; path = ../../Makefile.txt; sourceTree = "<group>"; };
+		98DA509D235EA5DC0041D022 /* solution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = solution.cpp; path = ../../solution.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,10 @@
 		98DA508C235EA48E0041D022 /* hw1 */ = {
 			isa = PBXGroup;
 			children = (
-				98DA508D235EA48E0041D022 /* main.cpp */,
+				98DA509A235EA5DC0041D022 /* homework1.cpp */,
+				98DA509C235EA5DC0041D022 /* Makefile.txt */,
+				98DA509D235EA5DC0041D022 /* solution.cpp */,
+				98DA509B235EA5DC0041D022 /* solution.h */,
 			);
 			path = hw1;
 			sourceTree = "<group>";
@@ -119,7 +126,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98DA508E235EA48E0041D022 /* main.cpp in Sources */,
+				98DA509F235EA5DC0041D022 /* solution.cpp in Sources */,
+				98DA509E235EA5DC0041D022 /* homework1.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
