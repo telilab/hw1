@@ -8,8 +8,6 @@ using namespace std;
 /*
  Put your actual implemetation in this file. See solution.h for details.
  */
-
-
 unsigned int List::GetSize(){
     return size;
 }
