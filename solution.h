@@ -21,7 +21,17 @@ using namespace std;
  In all classes, make things public, protected, or private as appropriate.
  Feel free to create helper functions or whatever class members you might need.
  */
-
+class Node {
+public:
+    Node(ListItem* item);
+    ~Node();
+    ListItem* getItem() const;
+    Node* getNext() const;
+    Node* getPrev() const;
+    void setItem(ListItem* item);
+    void setNext(Node* item);
+    void setPrev(Node* item);
+};
 class List
 {
     //
@@ -46,7 +56,9 @@ class List
      - It should print out "I'm a list. My size is #", where '#' is the size of the list, followed by a newline.
      */
 public:
-    // ~List();
+    virtual ~List(){
+        
+    }
     virtual bool AppendItem(ListItem) = 0;
     virtual bool PrependItem(ListItem) = 0;
     virtual ListItem GetItemAt(unsigned int) = 0;
@@ -76,19 +88,24 @@ class ArrayList : public List
      */
 public:
     ArrayList(unsigned int capacity);
+    virtual ~ArrayList(){
+        delete[] array;
+    }
     bool AppendItem(ListItem) override;
     bool PrependItem(ListItem) override;
     virtual ListItem GetItemAt(unsigned int)override;
     virtual void DeleteItemAt(unsigned int) override;
-    ListItem *array;
+    
 private:
     unsigned int _capacity;
-    
+    ListItem *array;
 };
 
 
-class DoublyLinkedList
+class DoublyLinkedList : public List
 {
+  
+    
     //
     //  TODO !!!
     //
@@ -103,7 +120,13 @@ class DoublyLinkedList
      ReversePrint should call the List class ReversePrint function and then print the contents of the list in the format "\t[3, 2, 1, 0]"
      */
 public:
-    ~DoublyLinkedList();
-    bool AppendItem(ListItem) ;
-    bool PrependItem(ListItem) ;
+    virtual ~DoublyLinkedList(){
+        
+    }
+    DoublyLinkedList();
+    bool AppendItem(ListItem item) ;
+    bool PrependItem(ListItem item) ;
+    
+private:
+      Node* head_;
 };
