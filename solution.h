@@ -21,17 +21,7 @@ using namespace std;
  In all classes, make things public, protected, or private as appropriate.
  Feel free to create helper functions or whatever class members you might need.
  */
-class Node {
-public:
-    Node(ListItem* item);
-    ~Node();
-    ListItem* getItem() const;
-    Node* getNext() const;
-    Node* getPrev() const;
-    void setItem(ListItem* item);
-    void setNext(Node* item);
-    void setPrev(Node* item);
-};
+
 class List
 {
     //
@@ -64,8 +54,8 @@ public:
     virtual ListItem GetItemAt(unsigned int) = 0;
     virtual void DeleteItemAt(unsigned int) = 0;
     unsigned int GetSize();
-    void Print();
-    void ReversePrint();
+    virtual void Print();
+    virtual void ReversePrint();
 protected:
     unsigned int size = 0;
     
@@ -88,13 +78,13 @@ class ArrayList : public List
      */
 public:
     ArrayList(unsigned int capacity);
-    virtual ~ArrayList(){
-        delete[] array;
-    }
+    virtual ~ArrayList();
     bool AppendItem(ListItem) override;
     bool PrependItem(ListItem) override;
     virtual ListItem GetItemAt(unsigned int)override;
     virtual void DeleteItemAt(unsigned int) override;
+    virtual void Print() override;
+    virtual void ReversePrint() override;
     
 private:
     unsigned int _capacity;
@@ -104,8 +94,6 @@ private:
 
 class DoublyLinkedList : public List
 {
-  
-    
     //
     //  TODO !!!
     //
@@ -120,13 +108,25 @@ class DoublyLinkedList : public List
      ReversePrint should call the List class ReversePrint function and then print the contents of the list in the format "\t[3, 2, 1, 0]"
      */
 public:
-    virtual ~DoublyLinkedList(){
-        
-    }
+    //virtual for distructor
+    ~DoublyLinkedList();
     DoublyLinkedList();
-    bool AppendItem(ListItem item) ;
-    bool PrependItem(ListItem item) ;
+    bool AppendItem(ListItem item)override;
+    bool PrependItem(ListItem item)override;
+    virtual ListItem GetItemAt(unsigned int) override;
+    virtual void DeleteItemAt(unsigned int) override;
+    virtual void Print() override;
+    virtual void ReversePrint() override;
+    
+    
     
 private:
-      Node* head_;
+    struct Node {
+        ListItem data;
+        Node* next;
+        Node* prev;
+    };
+    
+    Node* head_;
+    Node* tail_;
 };

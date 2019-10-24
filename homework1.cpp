@@ -8,21 +8,21 @@ using namespace std;
 //
 
 /*
-This is a VERY simple test. Feel free to add more tests if you like but it's not a required part of the assignment.
-I only care about Solution.h and Solution.cpp.
-*/
+ This is a VERY simple test. Feel free to add more tests if you like but it's not a required part of the assignment.
+ I only care about Solution.h and Solution.cpp.
+ */
 
 
 int main()
 {
     ArrayList a1 = ArrayList(10);
     ArrayList a2 = ArrayList(5);
-   // DoublyLinkedList l1 = DoublyLinkedList();
-
-    List *lists[] = { 
-        &a1, 
-        &a2, 
-     //   &l1, 
+    DoublyLinkedList l1 = DoublyLinkedList();
+    
+    List *lists[] = {
+        &a1,
+        &a2,
+        &l1,
         nullptr
     };
     int index = 0;
@@ -30,7 +30,7 @@ int main()
     while(list != nullptr)
     {
         printf("GetSize: %d\r\n", list->GetSize());
-
+        
         printf("AppendItem %s\r\n", list->AppendItem(5) ? "succeeded" : "failed");
         printf("AppendItem %s\r\n", list->AppendItem(3) ? "succeeded" : "failed");
         printf("PrependItem %s\r\n", list->PrependItem(7) ? "succeeded" : "failed");
@@ -46,10 +46,10 @@ int main()
         
         list->Print();
         list->ReversePrint();
-
+        
         list = lists[++index];
     }
-
+    
     return 0;
 }
 
